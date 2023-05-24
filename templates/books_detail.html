@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+{{ book.title  }}
+{% endblock title  %}
+
+{% block body  %}
+    <div class="container">
+<h2>Название: {{ book.title }} <br> Автор: {{ book.author }}</h2>
+      <div class="alert alert-info">
+     <p>Описание: {{ book.text }}</p>
+      <p><b>Дата: {{ book.date.date() }}</b></p>
+          <a href="/books/{{ book.id }}/delete" class="btn btn-danger">Удалить</a>
+          <a href="/books/{{ book.id }}/update" class="btn btn-success">Редактирование</a>
+       </div>
+    </div>
+{% endblock body  %}

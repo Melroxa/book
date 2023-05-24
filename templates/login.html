@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Вход
+{% endblock title  %}
+
+{% block body  %}
+<div class="container w-50">
+
+    <form action="/login" method="POST" class="form-contact">
+        <p><label for="" class="form-label"> Email:</label> <input class="form-control" type="text" name="email" value="" required></p>
+        <p><label for="" class="form-label"> Password:</label> <input class="form-control" type="password" name="psw" value="" required></p>
+        <p><input class="form-check-input" type='checkbox' name="remainm"> Запомнить меня</p>
+        <p><input class="btn btn-secondary" type="submit" value="Войти"></p>
+        <hr>
+        <p><a href="/register" class="link-offset-2 link-underline link-underline-opacity-0">Регистрация</a></p>
+
+    </form>
+</div>
+{% endblock body  %}

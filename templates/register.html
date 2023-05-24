@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Регистрация
+{% endblock title  %}
+
+{% block body  %}
+
+<div class="container w-50">
+
+
+
+    <form action="/login" method="POST" class="form-contact">
+          <p><label for="" class="form-label"> User:</label> <input class="form-control" type="text" name="name" value="" required></p>
+        <p><label for="" class="form-label"> Email:</label> <input class="form-control" type="text" name="email" value="" required></p>
+        <p><label for="" class="form-label"> Password:</label> <input class="form-control" type="password" name="psw" value="" required></p>
+        <p><label for="" class="form-label"> Password:</label> <input class="form-control" type="password" name="psw2" value="" required></p>
+        <p><input class="btn btn-secondary" type="submit" value="Регситрация"></p>
+        <hr>
+        <p><a href="/login" class="link-offset-2 link-underline link-underline-opacity-0">Войти</a></p>
+
+    </form>
+
+</div>
+
+{% endblock body  %}

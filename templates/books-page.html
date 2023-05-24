@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Главная страница
+{% endblock title  %}
+
+{% block body  %}
+ <div>
+ <h4 class="m-3">Все книги</h4>
+      <hr>
+ </div>
+    <div class="container d-flex flex-wrap">
+     {% if books|length > 0 %}
+    {% for el in books %}
+
+
+<div class="d-flex justify-content-between m-2">
+
+<div class="card" style="width: 18rem;">
+  <img src="/static/Uy-VZk9C_AY.jpg" class="card-img-top" alt="123">
+  <div class="card-body">
+    <p class="card-title">Название: {{ el.title |truncate(25, False, '...', 0) }} <br> Автор: {{ el.author }} <br> Дата публикации: {{ el.publication }}</p>
+    <p class="card-text">{{ el.page }} страница.</p>
+      <p class="card-text">{{  el.text |truncate(30, False, '...', 0)  }}</p>
+       <p class="card-text">Дата публикации записи: <br>{{ el.date.date() }}</p>
+      <hr>
+    <a href="/books-detail/{{ el.id }}" class="btn btn-warning">Подробнее...</a>
+    </div>
+</div>
+</div>
+
+
+
+
+{% endfor %}
+     {% else %}
+    <p>У нас ещё нет книг на сайте</p>
+    {% endif %}
+
+</div>
+
+{% endblock body  %}
